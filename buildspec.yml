@@ -1,15 +1,28 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo "Installing dependencies using node 18"
+      - npm install
+      - echo "Done installing dependencies ====>"
   pre_build:
     commands:
-      - npm install
+      - echo "Exporting the environment variables"
+      - echo VITE_BASE_URL='https://api.schull.io' >> .env
+      - echo VITE_ORG_ID='SCHULLEX' >> .env
+      - echo "Created the environment variables"
+
   build:
     commands:
+      - echo "Building the React Project"
       - npm run build
+      - echo "Done building the project ==> Exporting artifcats"
 
 artifacts:
   files:
     - '**/*'
   discard-paths: no
-  base-directory:dist
+  base-directory: dist
