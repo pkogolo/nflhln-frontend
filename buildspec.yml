@@ -19,10 +19,10 @@ phases:
     commands:
       - echo "Building the React Project"
       - npm run build
-      - echo "Done building the project ==> Exporting artifcats"
+      - echo "Done building the project ==> Exporting artifacts"
 
 artifacts:
   files:
     - '**/*'
   discard-paths: no
-  base-directory:dist
+  base-directory: dist
