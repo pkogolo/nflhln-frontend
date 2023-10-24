@@ -23,7 +23,13 @@ function Home() {
   return (
     <div className="grid grid-cols-6">
       {data.map((item) => {
-        return <p className="font-bold w-100 p-2 bg-black text-white m-2 cursor-pointer hover:bg-green-400 ">{item}</p>;
+        return (
+          <a target="_blank" href={item.link}>
+            <p className="font-bold w-100 p-2 bg-[#003A73] text-white m-2 cursor-pointer hover:bg-[#D92128] hover:scale-[1.1] transition-all rounded-sm ">
+              {item.headline}
+            </p>
+          </a>
+        );
       })}
     </div>
   );
